@@ -108,12 +108,18 @@ article {
     overflow: hidden;
 }
 
-blockquote {
-    background: rgba(0, 0, 0, 0.05);
-}
-
 blockquote, pre {
     overflow: auto;
+}
+
+blockquote {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 0 1em;
+}
+
+pre {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 1em;
 }
 
 h1,
