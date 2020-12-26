@@ -1,0 +1,6 @@
+on: push
+jobs:
+    build-demo:
+        runs-on: ubuntu-latest
+        steps:
+          - run: "curl -H 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' -X POST https://api.github.com/repos/${{ github.repository }}/pages/builds"
