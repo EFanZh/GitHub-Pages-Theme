@@ -1,5 +1,4 @@
-
-/* Global */
+// Global.
 
 :root {
     --sidebar-width: 240px;
@@ -10,86 +9,86 @@ body {
     margin: 0;
 }
 
-/* Side bar and header */
+// Side bar and header.
 
-aside, header {
+aside,
+header {
     background-color: #666;
     color: #eee;
     font-family: sans-serif;
 }
 
-/* Side bar */
+// Side bar.
 
 aside {
+    flex-direction: column;
     height: 100%;
     position: fixed;
     width: var(--sidebar-width);
 }
 
-aside {
-    flex-direction: column;
-}
-
-/* Header */
+// Header.
 
 header > nav > :first-child {
     margin-right: auto;
 }
 
-/* Navigation */
+// Navigation.
 
 nav {
     display: flex;
     flex-direction: inherit;
     width: 100%;
+
+    a:link {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: inherit;
+    }
+
+    a:hover {
+        background-color: #888;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    // Logo.
+
+    > :first-child {
+        display: flex;
+        flex-direction: inherit;
+
+        > a {
+            font-size: large;
+            font-weight: bold;
+            padding: 0.5em;
+        }
+    }
+
+    > ul {
+        display: flex;
+        flex-direction: inherit;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        > li {
+            display: flex;
+            flex-direction: inherit;
+
+            > a {
+                display: flex;
+                align-items: center;
+                padding: 0.25em 0.5em;
+            }
+        }
+    }
 }
 
-nav a:link {
-    color: inherit;
-    text-decoration: none;
-}
-
-nav a:visited {
-    color: inherit;
-}
-
-nav a:hover {
-    background-color: #888;
-    color: #fff;
-    text-decoration: none;
-}
-
-nav > :first-child {
-    display: flex;
-    flex-direction: inherit;
-}
-
-nav > :first-child > a {
-    font-size: large;
-    font-weight: bold;
-    padding: 0.5em;
-}
-
-nav > ul {
-    display: flex;
-    flex-direction: inherit;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav > ul > li {
-    display: flex;
-    flex-direction: inherit;
-}
-
-nav > ul > li > a {
-    display: flex;
-    align-items: center;
-    padding: 0.25em 0.5em;
-}
-
-/* Main */
+// Main.
 
 main {
     padding: 1em;
@@ -105,26 +104,56 @@ article {
     max-width: 960px;
     padding: 0 1em;
     overflow: hidden;
+
+    table {
+        border-bottom: 2px solid;
+        border-collapse: collapse;
+        border-top: 2px solid;
+        margin: auto;
+    }
+
+    thead {
+        border-bottom: 1px solid;
+    }
+
+    td,
+    th {
+        padding: 0 0.5em;
+        text-align: start;
+    }
 }
 
-article table {
-    border-bottom: 2px solid;
-    border-collapse: collapse;
-    border-top: 2px solid;
-    margin: auto;
-}
-
-article thead {
-    border-bottom: 1px solid;
-}
-
-article td, article th {
-    padding: 0 0.5em;
-    text-align: start;
-}
-
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     text-align: center;
+}
+
+h1 {
+    font-size: 1.070em;
+}
+
+h2 {
+    font-size: 1.145em;
+}
+
+h3 {
+    font-size: 1.225em;
+}
+
+h4 {
+    font-size: 1.310em;
+}
+
+h5 {
+    font-size: 1.402em;
+}
+
+h6 {
+    font-size: 1.500em;
 }
 
 @import "rouge";
