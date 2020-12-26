@@ -1,0 +1,4 @@
+markdown: gfm
+remote_theme: EFanZh/GitHub-Pages-Theme
+titles_from_headings:
+    collections: true
