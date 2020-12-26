@@ -68,6 +68,8 @@ nav {
         }
     }
 
+    // Links.
+
     > ul {
         display: flex;
         flex-direction: inherit;
@@ -133,27 +135,27 @@ h6 {
 }
 
 h1 {
-    font-size: 1.070em;
+    font-size: 1.500em;
 }
 
 h2 {
-    font-size: 1.145em;
-}
-
-h3 {
-    font-size: 1.225em;
-}
-
-h4 {
-    font-size: 1.310em;
-}
-
-h5 {
     font-size: 1.402em;
 }
 
+h3 {
+    font-size: 1.310em;
+}
+
+h4 {
+    font-size: 1.225em;
+}
+
+h5 {
+    font-size: 1.145em;
+}
+
 h6 {
-    font-size: 1.500em;
+    font-size: 1.070em;
 }
 
 @import "rouge";
