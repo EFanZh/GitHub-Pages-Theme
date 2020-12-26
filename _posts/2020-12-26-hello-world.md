@@ -35,6 +35,14 @@ Inline code: `let c = a + b;`.
    2. Lisa
    3. Maggie
 
+- Item 1
+- Item 2
+  - Sub item 1
+  - Sub item 2
+- Item 3
+  - Sub item 3
+  - Sub item 4
+
 ## Table
 
 | Key | Value | Description |
