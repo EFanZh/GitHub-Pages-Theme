@@ -2,4 +2,4 @@
 
 Personal GitHub theme used my myself.
 
-Demo: <http://efanzh.org/GitHub-Pages-Theme/>.
+Demo: <https://efanzh.org/GitHub-Pages-Theme/>.
