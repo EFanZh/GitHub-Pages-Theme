@@ -1,11 +1,11 @@
             <nav>
                 <div><a href="{{ "/" | relative_url }}">{{ site.title }}</a></div>
                 <ul>
-{%- for collection in site.collections %}
-    {%- if collection.label != "posts" %}
-                    <li><a href="{{ collection.label | relative_url }}/">{{ collection.label }}</a></li>
+{%- for page in site.pages %}
+    {%- if page.dir == "/" and page.url != "/" %}
+                    <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
     {%- endif %}
 {%- endfor %}
-                    <li><a href="{{ site.github.owner_url }}">GitHub</a></li>
+                    <li><a href="{% if site.github.is_project_page %}{{ site.github.repository_url }}{% else %}{{ site.github.owner_url }}{% endif %}">GitHub</a></li>
                 </ul>
             </nav>
