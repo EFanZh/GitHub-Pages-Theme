@@ -106,23 +106,14 @@ article {
     max-width: 960px;
     padding: 0 1em;
     overflow: hidden;
+}
 
-    table {
-        border-bottom: 2px solid;
-        border-collapse: collapse;
-        border-top: 2px solid;
-        margin: auto;
-    }
+blockquote {
+    background: rgba(0, 0, 0, 0.05);
+}
 
-    thead {
-        border-bottom: 1px solid;
-    }
-
-    td,
-    th {
-        padding: 0 0.5em;
-        text-align: start;
-    }
+blockquote, pre {
+    overflow: auto;
 }
 
 h1,
@@ -156,6 +147,23 @@ h5 {
 
 h6 {
     font-size: 1.070em;
+}
+
+table {
+    border-bottom: 2px solid;
+    border-collapse: collapse;
+    border-top: 2px solid;
+    margin: 1em auto;
+}
+
+thead {
+    border-bottom: 1px solid;
+}
+
+td,
+th {
+    padding: 0 0.5em;
+    text-align: start;
 }
 
 @import "rouge";

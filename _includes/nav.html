@@ -2,7 +2,7 @@
                 <div><a href="{{ "/" | relative_url }}">{{ site.title }}</a></div>
                 <ul>
 {%- for page in site.pages %}
-    {%- if page.dir == "/" and page.url != "/" %}
+    {%- if page.dir == "/" and page.title and page.url != "/" %}
                     <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
     {%- endif %}
 {%- endfor %}
