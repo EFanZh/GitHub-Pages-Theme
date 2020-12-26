@@ -1,1 +1,3 @@
-# GitHub-Pages-Theme
+# GitHub Pages Theme
+
+Personal GitHub theme used my myself.

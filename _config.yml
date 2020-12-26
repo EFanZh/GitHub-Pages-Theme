@@ -1,0 +1,4 @@
+markdown: gfm
+theme: null
+titles_from_headings:
+    collections: true
