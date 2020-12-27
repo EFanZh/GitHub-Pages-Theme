@@ -1,5 +1,5 @@
 # GitHub Pages Theme
 
-Personal GitHub theme used my myself.
+Personal GitHub Pages theme used by myself.
 
 Demo: <https://efanzh.org/GitHub-Pages-Theme/>.

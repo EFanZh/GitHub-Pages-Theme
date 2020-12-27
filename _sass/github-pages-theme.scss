@@ -16,21 +16,30 @@ header {
     background-color: #666;
     color: #eee;
     font-family: sans-serif;
+    overflow: auto;
+
+    nav > :first-child {
+        margin-right: auto;
+    }
 }
 
 // Side bar.
 
-aside {
-    flex-direction: column;
-    height: 100%;
-    position: fixed;
-    width: var(--sidebar-width);
-}
+@media screen and (min-width: 640px) {
+    aside {
+        flex-direction: column;
+        height: 100%;
+        position: fixed;
+        width: var(--sidebar-width);
+    }
 
-// Header.
+    aside > nav > :first-child {
+        margin-right: 0;
+    }
 
-header > nav > :first-child {
-    margin-right: auto;
+    aside + main {
+        margin-left: var(--sidebar-width);
+    }
 }
 
 // Navigation.
@@ -94,10 +103,6 @@ nav {
 
 main {
     padding: 1em;
-}
-
-aside + main {
-    margin-left: var(--sidebar-width);
 }
 
 article {
