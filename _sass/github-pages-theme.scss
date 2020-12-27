@@ -13,12 +13,14 @@
     --nav-link-hover-background: #888;
     --nav-text-color: #eee;
     --sidebar-width: 240px;
+    --splitter-background: #999;
     --text-background: #fff;
     --text-font: 16px "Libertinus Serif", "Linux Libertine", "Minion Pro", "Source Serif Pro", serif;
     --text-font-mobile: 14px "Libertinus Serif", "Linux Libertine", "Minion Pro", "Source Serif Pro", serif;
     --text-link-color: rgb(22, 70, 201);
     --text-link-visited-color: #d7d;
     --text-max-width: 960px;
+    --toc-min-height: 240px;
     background-color: #222;
     font: var(--text-font-mobile)
 }
@@ -33,7 +35,6 @@ nav {
     background-color: var(--nav-background);
     color: var(--nav-text-color);
     display: flex;
-    flex-direction: inherit;
     font: var(--control-font);
     overflow: auto;
 
@@ -100,13 +101,14 @@ nav {
     }
 
     aside {
-        flex-direction: column;
+        display: flex;
         height: 100%;
         position: fixed;
         width: var(--sidebar-width);
 
         > nav {
-            height: 100%;
+            flex: 1;
+            flex-direction: column;
 
             > :first-child {
                 margin-right: 0;
@@ -120,7 +122,7 @@ nav {
                 display: block;
                 flex: 1;
                 margin: 1em 0 0 0;
-                min-height: var(--sidebar-width);
+                min-height: var(--toc-min-height);
                 overflow: auto;
                 padding: 0;
 
@@ -160,6 +162,14 @@ nav {
                     padding-left: 1em;
                 }
             }
+        }
+
+        // Splitter.
+
+        > div {
+            background: var(--splitter-background);
+            cursor: col-resize;
+            width: 5px;
         }
 
         + main {

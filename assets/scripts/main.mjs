@@ -43,4 +43,29 @@ function buildToc(article) {
     return result;
 }
 
-$("aside > nav > :last-child")?.append(...buildToc($("article")));
+const sidebar = $("aside");
+
+if (sidebar) {
+    const root = $(":root");
+
+    sidebar.firstElementChild.lastElementChild.append(...buildToc($("article")));
+
+    sidebar.lastElementChild.addEventListener("pointerdown", function (e0) {
+        const pointerId = e0.pointerId;
+        const savedSidebarWidth = sidebar.offsetWidth - e0.x;
+
+        function moveHandler(e1) {
+            root.style.setProperty("--sidebar-width", (savedSidebarWidth + e1.x) + "px");
+        }
+
+        function upHandler() {
+            this.removeEventListener("pointerup", upHandler);
+            this.removeEventListener("pointermove", moveHandler);
+            this.releasePointerCapture(pointerId);
+        }
+
+        this.setPointerCapture(pointerId);
+        this.addEventListener("pointermove", moveHandler);
+        this.addEventListener("pointerup", upHandler);
+    });
+}
