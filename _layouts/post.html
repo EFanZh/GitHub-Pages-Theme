@@ -6,6 +6,5 @@ layout: default
 {% include nav.html %}        </aside>
         <main>
             <article>
-{{ content | rstrip }}
-           </article>
+{% if content.size > 1 %}{{ content }}{% endif %}            </article>
         </main>

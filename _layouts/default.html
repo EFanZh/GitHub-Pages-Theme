@@ -11,5 +11,5 @@
         <script type="module" src="{{ "/assets/scripts/main.mjs" | relative_url }}" defer></script>
     </head>
     <body>
-{{ content }}    </body>
+{% if content.size > 1 %}{{ content }}{% endif %}    </body>
 </html>
