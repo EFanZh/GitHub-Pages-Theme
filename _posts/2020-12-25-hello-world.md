@@ -45,11 +45,15 @@ Inline code: `let c = a + b;`.
 
 ## Table
 
+Text before table.
+
 | Key | Value | Description |
 | --- | ----- | ----------- |
 | x   | 3     | Left        |
 | y   | 6     | Right       |
 | z   | 9     | Result      |
+
+Text after table.
 
 ## Block quotations
 
