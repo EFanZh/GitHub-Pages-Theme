@@ -60,6 +60,12 @@ Text before table.
 
 Text after table.
 
+| x     | y    |
+| ----- | ---- |
+| 10000 | 30   |
+| 1000  | 200  |
+| 100   | 1000 |
+
 ## Block quotations
 
 Normal text.
