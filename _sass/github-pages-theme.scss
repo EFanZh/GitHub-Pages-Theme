@@ -15,11 +15,12 @@
     --sidebar-width: 240px;
     --text-background: #fff;
     --text-font: 16px "Libertinus Serif", "Linux Libertine", "Minion Pro", "Source Serif Pro", serif;
+    --text-font-mobile: 14px "Libertinus Serif", "Linux Libertine", "Minion Pro", "Source Serif Pro", serif;
     --text-link-color: rgb(22, 70, 201);
     --text-link-visited-color: #d7d;
     --text-max-width: 960px;
     background-color: #222;
-    font: var(--text-font)
+    font: var(--text-font-mobile)
 }
 
 body {
@@ -94,6 +95,10 @@ nav {
 }
 
 @media screen and (min-width: 640px) {
+    :root {
+        font: var(--text-font);
+    }
+
     aside {
         flex-direction: column;
         height: 100%;
@@ -161,12 +166,10 @@ nav {
             margin-left: var(--sidebar-width);
         }
     }
-}
 
-// Main.
-
-main {
-    padding: 1em;
+    main {
+        padding: 1em;
+    }
 }
 
 article {
