@@ -206,7 +206,7 @@ h5,
 h6 {
     text-align: center;
 
-    a:visited {
+    a:link, a:visited {
         color: inherit;
     }
 }
