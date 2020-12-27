@@ -75,22 +75,22 @@ End of quotations.
 - [Google](https://google.com/)
 - [Hacker News](https://news.ycombinator.com/)
 
-## Head 2
+## Heading 2
 
 Text.
 
-### Head 3
+### Heading 3
 
 Text.
 
-#### Head 4
+#### Heading 4
 
 Text.
 
-##### Head 5
+##### Heading 5
 
 Text.
 
-###### Head 6
+###### Heading 6
 
 Text.
