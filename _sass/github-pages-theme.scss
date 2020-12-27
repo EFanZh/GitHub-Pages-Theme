@@ -13,7 +13,7 @@
     --nav-link-hover-background: #888;
     --nav-text-color: #eee;
     --sidebar-width: 240px;
-    --splitter-background: #999;
+    --splitter-background: rgba(18, 94, 145, 0.618);
     --text-background: #fff;
     --text-font: 16px "Libertinus Serif", "Linux Libertine", "Minion Pro", "Source Serif Pro", serif;
     --text-font-mobile: 14px "Libertinus Serif", "Linux Libertine", "Minion Pro", "Source Serif Pro", serif;
@@ -167,9 +167,15 @@ nav {
         // Splitter.
 
         > div {
-            background: var(--splitter-background);
             cursor: col-resize;
-            width: 5px;
+            margin-left: -3px;
+            margin-right: -3px;
+            width: 6px;
+            z-index: 1;
+        }
+
+        > div:hover {
+            background: var(--splitter-background);
         }
 
         + main {
