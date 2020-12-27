@@ -5,8 +5,9 @@
     --block-quote-background: rgba(0, 0, 0, 0.05);
     --code-color: #000;
     --code-font-family: Consolas, "Source Code Pro", monospace;
-    --control-font: 16px "Myriad Pro", "Source Sans Pro", "Segoe UI", sans-serif;
+    --control-font: 14px "Myriad Pro", "Source Sans Pro", "Segoe UI", sans-serif;
     --inline-code-background: rgba(0, 0, 0, 0.05);
+    --logo-font: 24px "Myriad Pro", "Source Sans Pro", "Segoe UI", sans-serif;
     --nav-background: #666;
     --nav-link-color: #eee;
     --nav-link-hover-background: #888;
@@ -61,8 +62,7 @@ nav {
 
         > a {
             display: block;
-            font-size: large;
-            font-weight: bold;
+            font: var(--logo-font);
             padding: 0.5em;
         }
     }
@@ -126,7 +126,24 @@ nav {
                 summary {
                     align-items: baseline;
                     display: flex;
-                    padding-left: 0.5em;
+                }
+
+                summary::before {
+                    content: "·";
+                    text-align: center;
+                    width: 1.5em;
+                }
+
+                summary:not(:only-child)::before {
+                    content: "⏵";
+                }
+
+                details[open] > summary:not(:only-child)::before {
+                    content: "⏷";
+                }
+
+                summary::marker, summary::-webkit-details-marker {
+                    display: none;
                 }
 
                 summary:hover {
@@ -198,12 +215,7 @@ pre {
     }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     text-align: center;
 
     a:link, a:visited {
@@ -246,8 +258,7 @@ thead {
     border-bottom: 1px solid;
 }
 
-td,
-th {
+td, th {
     padding: 0 0.5em;
     text-align: start;
 }

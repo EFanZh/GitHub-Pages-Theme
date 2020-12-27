@@ -27,16 +27,16 @@ function buildToc(article) {
 
             details.open = true;
             details.appendChild(createElement("summary")).appendChild(createHeadingAnchor(child));
-
-            const ul = details.appendChild(createElement("ul"));
+            stack[headingLevel] = details;
 
             if (headingLevel === 0) {
                 result.push(item);
             } else {
-                stack[headingLevel - 1].appendChild(item);
-            }
+                const parent = stack[headingLevel - 1];
+                const children = parent.children[1] || parent.appendChild(createElement("ul"));
 
-            stack[headingLevel] = ul;
+                children.appendChild(item);
+            }
         }
     }
 
