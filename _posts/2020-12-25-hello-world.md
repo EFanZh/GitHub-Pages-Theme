@@ -4,6 +4,11 @@ This is a paragraph.
 
 This is another paragraph.
 
+- *Italic*.
+- **Bold**.
+- ***Bold and Italic***.
+- ~~Strikethrough~~.
+
 ## Codes
 
 ```rust
