@@ -3,7 +3,7 @@ const $ = document.querySelector.bind(document);
 function buildToc(article) {
     const createElement = document.createElement.bind(document);
     const headingLevels = Object.freeze({ "H1": 0, "H2": 1, "H3": 2, "H4": 3, "H5": 4, "H6": 5 });
-    const result = new DocumentFragment();
+    const result = [];
     const headingAnchors = [];
     const stack = [];
 
@@ -18,14 +18,14 @@ function buildToc(article) {
 
             const headingAnchor = createElement("a");
 
-            headingAnchor.href = `#${child.id}`;
+            headingAnchor.href = "#" + child.id;
             headingAnchor.innerText = child.innerText;
 
             details.appendChild(createElement("summary")).appendChild(headingAnchor);
             stack[headingLevel] = details;
 
             if (headingLevel === 0) {
-                result.appendChild(item);
+                result.push(item);
             } else {
                 const parent = stack[headingLevel - 1];
 
@@ -43,4 +43,4 @@ function buildToc(article) {
     return result;
 }
 
-$("aside > nav > :last-child")?.appendChild(buildToc($("article")));
+$("aside > nav > :last-child")?.append(...buildToc($("article")));
