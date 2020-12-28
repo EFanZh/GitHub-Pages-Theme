@@ -66,7 +66,7 @@ if (sidebar) {
 
             this.addEventListener("touchmove", moveHandler);
             this.addEventListener("pointerup", upHandler);
-        } else {
+        } else if (e0.button === 0) {
             function moveHandler(e1) {
                 root.style.setProperty("--sidebar-width", (savedSidebarWidth + e1.x) + "px");
             }
