@@ -54,18 +54,32 @@ if (sidebar) {
         const pointerId = e0.pointerId;
         const savedSidebarWidth = sidebar.offsetWidth - e0.x;
 
-        function moveHandler(e1) {
-            root.style.setProperty("--sidebar-width", (savedSidebarWidth + e1.x) + "px");
-        }
+        if (e0.pointerType === "touch") {
+            function moveHandler(e1) {
+                root.style.setProperty("--sidebar-width", (savedSidebarWidth + e1.touches[0].clientX) + "px");
+            }
 
-        function upHandler() {
-            this.removeEventListener("pointerup", upHandler);
-            this.removeEventListener("pointermove", moveHandler);
-            this.releasePointerCapture(pointerId);
-        }
+            function upHandler() {
+                this.removeEventListener("pointerup", upHandler);
+                this.removeEventListener("touchmove", moveHandler);
+            }
 
-        this.setPointerCapture(pointerId);
-        this.addEventListener("pointermove", moveHandler);
-        this.addEventListener("pointerup", upHandler);
+            this.addEventListener("touchmove", moveHandler);
+            this.addEventListener("pointerup", upHandler);
+        } else {
+            function moveHandler(e1) {
+                root.style.setProperty("--sidebar-width", (savedSidebarWidth + e1.x) + "px");
+            }
+
+            function upHandler() {
+                this.removeEventListener("pointerup", upHandler);
+                this.removeEventListener("pointermove", moveHandler);
+                this.releasePointerCapture(pointerId);
+            }
+
+            this.setPointerCapture(pointerId);
+            this.addEventListener("pointermove", moveHandler);
+            this.addEventListener("pointerup", upHandler);
+        }
     });
 }
