@@ -5,18 +5,19 @@
     --block-quote-background: rgba(0, 0, 0, 0.05);
     --code-color: #000;
     --code-font-family: Consolas, "Source Code Pro", monospace;
-    --control-font: 14px "Myriad Pro", "Source Sans Pro", "Segoe UI", sans-serif;
+    --control-font: 14px "Myriad Pro", "Source Sans 3 VF", "Source Sans 3", "Source Sans Pro", "Segoe UI", sans-serif;
     --inline-code-background: rgba(0, 0, 0, 0.05);
     --logo-font: 24px "Myriad Pro", "Source Sans Pro", "Segoe UI", sans-serif;
     --nav-background: #666;
     --nav-link-color: #eee;
     --nav-link-hover-background: #888;
-    --nav-text-color: #eee;
+    --nav-text-color: #aaa;
     --sidebar-width: 240px;
     --splitter-background: rgba(18, 94, 145, 0.618);
     --text-background: #fff;
-    --text-font: 16px "Libertinus Serif", "Linux Libertine", "Minion Pro", "Source Serif Pro", serif;
-    --text-font-mobile: 14px "Libertinus Serif", "Linux Libertine", "Minion Pro", "Source Serif Pro", serif;
+    --text-font: 16px var(--text-font-family);
+    --text-font-family: "Libertinus Serif", "Linux Libertine", "Minion Pro", "Source Serif Variable", "Source Serif Pro", serif;
+    --text-font-mobile: 14px var(--text-font-family);
     --text-link-color: rgb(22, 70, 201);
     --text-link-visited-color: #d7d;
     --text-max-width: 960px;
@@ -39,18 +40,17 @@ nav {
     overflow: auto;
 
     a:link {
-        color: inherit;
+        color: var(--nav-link-color);
         padding: 0.25em 0.5em;
         text-decoration: none;
     }
 
     a:visited {
-        color: inherit;
+        color: var(--nav-link-color);
     }
 
     a:hover {
         background-color: var(--nav-link-hover-background);
-        color: var(--nav-link-color);
     }
 
     ul {
@@ -144,7 +144,6 @@ nav {
 
                 summary:not(:only-child)::before {
                     content: ">";
-                    font-family: var(--code-font-family);
                 }
 
                 details[open] > summary:not(:only-child)::before {
