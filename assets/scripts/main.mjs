@@ -51,12 +51,15 @@ if (sidebar) {
     sidebar.firstElementChild.lastElementChild.append(...buildToc($("article")));
 
     sidebar.lastElementChild.addEventListener("pointerdown", function (e0) {
-        const pointerId = e0.pointerId;
+        const minSidebarWidth = 0;
         const savedSidebarWidth = sidebar.offsetWidth - e0.x;
 
         if (e0.pointerType === "touch") {
             function moveHandler(e1) {
-                root.style.setProperty("--sidebar-width", (savedSidebarWidth + e1.touches[0].clientX) + "px");
+                root.style.setProperty(
+                    "--sidebar-width",
+                    Math.max(savedSidebarWidth + e1.touches[0].clientX, minSidebarWidth) + "px"
+                );
             }
 
             function upHandler() {
@@ -67,8 +70,10 @@ if (sidebar) {
             this.addEventListener("touchmove", moveHandler);
             this.addEventListener("pointerup", upHandler);
         } else if (e0.button === 0) {
+            const pointerId = e0.pointerId;
+
             function moveHandler(e1) {
-                root.style.setProperty("--sidebar-width", (savedSidebarWidth + e1.x) + "px");
+                root.style.setProperty("--sidebar-width", Math.max(savedSidebarWidth + e1.x, minSidebarWidth) + "px");
             }
 
             function upHandler() {
