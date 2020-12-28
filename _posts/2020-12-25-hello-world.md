@@ -11,6 +11,10 @@ This is another paragraph.
 
 After list.
 
+Horizontal line:
+
+----
+
 ## Codes
 
 ```rust
