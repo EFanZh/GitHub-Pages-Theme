@@ -1,12 +1,4 @@
 .highlight {
-    table td {
-        padding: 5px;
-    }
-
-    table pre {
-        margin: 0;
-    }
-
     .cm {
         color: #999988;
         font-style: italic;
@@ -28,8 +20,7 @@
         font-style: italic;
     }
 
-    .c,
-    .cd {
+    .c, .cd {
         color: #999988;
         font-style: italic;
     }
@@ -112,8 +103,7 @@
         font-weight: bold;
     }
 
-    .k,
-    .kv {
+    .k, .kv {
         color: #000000;
         font-weight: bold;
     }
@@ -138,9 +128,7 @@
         color: #009999;
     }
 
-    .m,
-    .mb,
-    .mx {
+    .m, .mb, .mx {
         color: #009999;
     }
 

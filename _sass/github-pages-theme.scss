@@ -143,11 +143,12 @@ nav {
                 }
 
                 summary:not(:only-child)::before {
-                    content: "⏵";
+                    content: ">";
+                    font-family: var(--code-font-family);
                 }
 
                 details[open] > summary:not(:only-child)::before {
-                    content: "⏷";
+                    transform: rotate(90deg);
                 }
 
                 summary::marker, summary::-webkit-details-marker {
