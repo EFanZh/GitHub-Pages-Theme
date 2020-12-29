@@ -23,6 +23,7 @@
     --text-max-width: 960px;
     --toc-min-height: 240px;
     background-color: #222;
+    line-height: 1.15;
     font: var(--text-font-mobile)
 }
 
@@ -236,6 +237,7 @@ pre {
 }
 
 h1, h2, h3, h4, h5, h6 {
+    margin-block: 1em;
     text-align: center;
 
     a:link, a:visited {
@@ -289,6 +291,7 @@ thead {
 td, th {
     padding: 0 0.5em;
     text-align: start;
+    vertical-align: baseline;
 }
 
 @import "rouge";
