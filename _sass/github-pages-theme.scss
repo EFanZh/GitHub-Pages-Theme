@@ -38,11 +38,11 @@ nav {
     color: var(--nav-text-color);
     display: flex;
     font: var(--control-font);
+    justify-content: space-between;
     overflow: auto;
 
     a:link {
         color: var(--nav-link-color);
-        padding: 0.25em 0.5em;
         text-decoration: none;
     }
 
@@ -56,13 +56,13 @@ nav {
 
     ul {
         list-style-type: none;
+        margin: 0;
+        padding: 0;
     }
 
     // Logo.
 
     > :first-child {
-        margin-right: auto;
-
         > a {
             display: block;
             font: var(--logo-font);
@@ -75,16 +75,15 @@ nav {
     > :nth-child(2) {
         display: flex;
         flex-direction: inherit;
-        margin: 0;
-        padding: 0;
 
         > li {
             display: flex;
             flex-direction: inherit;
 
             > a {
-                display: flex;
                 align-items: center;
+                display: flex;
+                padding: 0.25em 0.5em;
             }
         }
     }
@@ -110,30 +109,22 @@ nav {
         > nav {
             flex: 1;
             flex-direction: column;
-
-            > :first-child {
-                margin-right: 0;
-            }
-
-            > :nth-child(2) {
-                margin-top: 1em;
-            }
+            gap: 1em;
 
             > :last-child {
                 display: block;
                 flex: 1;
-                margin: 1em 0 0 0;
                 min-height: var(--toc-min-height);
                 overflow: auto;
-                padding: 0;
 
                 a {
                     flex: 1;
-                    padding-left: 0;
+                    padding: 0.25em 0.5em 0.25em 0;
                 }
 
                 summary {
                     display: flex;
+                    align-items: flex-start;
                 }
 
                 summary::before {
