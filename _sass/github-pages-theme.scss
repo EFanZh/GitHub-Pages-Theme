@@ -133,22 +133,23 @@ nav {
                 }
 
                 summary {
-                    align-items: baseline;
                     display: flex;
                 }
 
                 summary::before {
                     content: "·";
+                    flex: 0 0 1.5em;
+                    padding: 0.25em 0;
                     text-align: center;
-                    width: 1.5em;
                 }
 
                 summary:not(:only-child)::before {
-                    content: ">";
+                    content: "\e5cc";
+                    font-family: "Material Icons";
                 }
 
                 details[open] > summary:not(:only-child)::before {
-                    transform: rotate(90deg);
+                    content: "\e5cf";
                 }
 
                 summary::marker, summary::-webkit-details-marker {
