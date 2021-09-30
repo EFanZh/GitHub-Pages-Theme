@@ -1,5 +1,5 @@
             <nav>
-                <div><a href="{{ "/" | relative_url }}">{{ site.title }}</a></div>
+                <a href="{{ "/" | relative_url }}">{{ site.title }}</a>
                 <ul>
 {%- for page in site.pages %}
     {%- if page.dir == "/" and page.title and page.url != "/" %}
