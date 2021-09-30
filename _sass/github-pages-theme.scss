@@ -74,15 +74,6 @@ article {
         font-family: var(--code-font-family);
     }
 
-    pre {
-        background: var(--block-code-background);
-        padding: 1em;
-
-        code {
-            background: none;
-        }
-    }
-
     h1, h2, h3, h4, h5, h6 {
         margin-block: 1em;
         text-align: center;
@@ -131,6 +122,15 @@ article {
         padding-inline-start: 2em;
     }
 
+    pre {
+        background: var(--block-code-background);
+        padding: 1em;
+
+        code {
+            background: none;
+        }
+    }
+
     table {
         border-block-end: 2px solid;
         border-block-start: 2px solid;
@@ -151,6 +151,10 @@ article {
 
 body {
     margin: 0;
+}
+
+header > nav > :last-child {
+    display: none;
 }
 
 // Navigation.
@@ -223,7 +227,7 @@ nav {
 
             // Table of context.
 
-            > :last-child {
+            > :nth-child(3) {
                 flex: 1 1 var(--toc-min-height);
                 overflow: auto;
 
