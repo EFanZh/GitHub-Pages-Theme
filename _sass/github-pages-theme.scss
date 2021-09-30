@@ -311,7 +311,7 @@ nav {
 }
 
 @media print {
-    aside {
+    aside, header {
         display: none;
     }
 }
