@@ -8,5 +8,7 @@
 {%- endfor %}
                     <li><a href="{% if site.github.is_project_page %}{{ site.github.repository_url }}{% else %}{{ site.github.owner_url }}{% endif %}">GitHub</a></li>
                 </ul>
+{%- if page.layout == "post" %}
                 <ul></ul>
+{%- endif %}
             </nav>

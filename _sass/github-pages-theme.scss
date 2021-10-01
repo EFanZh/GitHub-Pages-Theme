@@ -1,11 +1,11 @@
-// Global.
+$min-desktop-width: 640px;
 
 :root {
     --block-code-background: rgba(0, 0, 0, 0.05);
     --block-quote-background: rgba(0, 0, 0, 0.05);
     --code-color: #000;
     --code-font-family: Consolas, "Source Code Pro", monospace;
-    --control-font: 14px "Myriad Pro", "Source Sans 3 VF", "Source Sans 3", "Source Sans Pro", "Segoe UI", sans-serif;
+    --control-font: 14px/1 "Myriad Pro", "Source Sans 3 VF", "Source Sans 3", "Source Sans Pro", "Segoe UI", sans-serif;
     --inline-code-background: rgba(0, 0, 0, 0.05);
     --logo-font: 24px "Myriad Pro", "Source Sans Pro", "Segoe UI", sans-serif;
     --nav-background: #666;
@@ -15,7 +15,7 @@
     --sidebar-width: 240px;
     --splitter-background: rgba(18, 94, 145, 0.618);
     --text-background: #fff;
-    --text-font: 16px/1.25 var(--text-font-family);
+    --text-font-desktop: 16px/1.25 var(--text-font-family);
     --text-font-family: "Minion Pro", "Source Serif Variable", "Source Serif Pro", "Times New Roman", serif;
     --text-font-mobile: 14px/1.5 var(--text-font-family);
     --text-link-color: #187fec;
@@ -23,7 +23,6 @@
     --text-max-width: 960px;
     --toc-min-height: 240px;
     -webkit-print-color-adjust: exact;
-    background-color: #222;
 }
 
 a:link {
@@ -31,7 +30,6 @@ a:link {
 }
 
 article {
-    background-color: var(--text-background);
     box-sizing: border-box;
     margin: auto;
     max-width: var(--text-max-width);
@@ -40,26 +38,6 @@ article {
 
     a:link {
         color: var(--text-link-color);
-    }
-
-    @media print {
-        a:visited {
-            color: var(--text-link-color);
-        }
-    }
-
-    @media not print {
-        a:hover {
-            text-decoration: underline;
-        }
-
-        a:visited {
-            color: var(--text-link-visited-color);
-        }
-    }
-
-    blockquote, pre {
-        overflow: auto;
     }
 
     blockquote {
@@ -78,8 +56,10 @@ article {
         margin-block: 1em;
         text-align: center;
 
-        a:link, a:visited {
-            color: inherit;
+        a {
+            &:link, &:visited {
+                color: inherit;
+            }
         }
     }
 
@@ -153,164 +133,202 @@ body {
     margin: 0;
 }
 
-header > nav > :last-child {
-    display: none;
-}
-
-// Navigation.
-
-nav {
-    background-color: var(--nav-background);
-    color: var(--nav-text-color);
-    display: flex;
-    font: var(--control-font);
-    justify-content: space-between;
-    overflow: auto;
-
-    a:link, a:visited {
-        color: var(--nav-link-color);
-    }
-
-    a:hover {
-        background-color: var(--nav-link-hover-background);
-    }
-
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    // Logo.
-
-    > :first-child {
-        font: var(--logo-font);
-        padding: 0.5em;
-    }
-
-    // Links.
-
-    > :nth-child(2) {
-        display: flex;
-        flex-direction: inherit;
-
-        > li {
-            display: flex;
-            flex-direction: inherit;
-
-            > a {
-                align-items: center;
-                display: flex;
-                padding: 0.25em 0.5em;
-            }
-        }
-    }
-}
-
-@media screen and (min-width: 640px) {
+@media screen {
     :root {
-        font: var(--text-font);
+        background-color: #222;
     }
 
-    aside {
-        display: flex;
-        height: 100%;
-        position: fixed;
-        width: var(--sidebar-width);
+    article {
+        background-color: var(--text-background);
 
-        // Navigator bar.
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
 
-        > :first-child {
-            flex: 1;
-            flex-direction: column;
-            gap: 1em;
-
-            // Table of context.
-
-            > :nth-child(3) {
-                flex: 1 1 var(--toc-min-height);
-                overflow: auto;
-
-                a {
-                    flex: 1;
-                    padding: 0.25em 0.5em 0.25em 0;
-                }
-
-                summary {
-                    display: flex;
-                    align-items: flex-start; // Align at top if there are multiple lines of text.
-                }
-
-                summary::before {
-                    flex: 0 0 1.5em;
-                    padding: 0.25em 0;
-                    text-align: center;
-                }
-
-                summary:only-child::before {
-                    content: "·";
-                }
-
-                summary:not(:only-child)::before {
-                    content: "\e5cc";
-                    font-family: "Material Icons";
-                }
-
-                details[open] > summary:not(:only-child)::before {
-                    content: "\e5cf";
-                }
-
-                summary::marker, summary::-webkit-details-marker {
-                    display: none;
-                }
-
-                summary:hover {
-                    background-color: var(--nav-link-hover-background);
-                }
-
-                ul {
-                    padding-inline-start: 1em;
-                }
+            &:visited {
+                color: var(--text-link-visited-color);
             }
         }
 
-        // Splitter.
-
-        > :last-child {
-            cursor: col-resize;
-            flex: 0 0 6px;
-            margin-inline-end: -3px;
-            margin-inline-start: -3px;
-            z-index: 1;
-        }
-
-        > :last-child:hover {
-            background: var(--splitter-background);
-        }
-
-        + main {
-            margin-inline-start: var(--sidebar-width);
+        blockquote, pre {
+            overflow: auto;
         }
     }
 
     main {
         padding: 1em;
     }
-}
 
-@media not screen and (min-width: 640px) {
-    :root {
-        font: var(--text-font-mobile);
+    // Navigation.
+
+    nav {
+        background-color: var(--nav-background);
+        color: var(--nav-text-color);
+        display: flex;
+        font: var(--control-font);
+        justify-content: space-between;
+        overflow: auto;
+
+        a {
+            &:link, &:visited {
+                color: var(--nav-link-color);
+            }
+
+            &:hover {
+                background-color: var(--nav-link-hover-background);
+            }
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        // Logo.
+
+        > :first-child {
+            align-items: center;
+            display: flex;
+            font: var(--logo-font);
+            padding: 0.5em;
+        }
+
+        // Links.
+
+        > :nth-child(2) {
+            display: flex;
+            flex-direction: inherit;
+
+            > li {
+                display: flex;
+                flex-direction: inherit;
+
+                > a {
+                    align-items: center;
+                    display: flex;
+                    padding: 0.25em 0.5em;
+                }
+            }
+        }
     }
 
-    // Hide splitter and table of content.
+    // Sidebar.
 
-    aside > :last-child, nav > :last-child {
-        display: none;
+    @media (min-width: $min-desktop-width) {
+        :root {
+            font: var(--text-font-desktop);
+        }
+
+        aside {
+            display: flex;
+            height: 100%;
+            position: fixed;
+            width: var(--sidebar-width);
+
+            // Navigator bar.
+
+            > :first-child {
+                flex: 1;
+                flex-direction: column;
+                gap: 1em;
+
+                // Table of context.
+
+                > :nth-child(3) {
+                    flex: 1 1 var(--toc-min-height);
+                    overflow: auto;
+
+                    a {
+                        flex: 1;
+                        padding: 0.25em 0.5em 0.25em 0;
+                    }
+
+                    summary {
+                        display: flex;
+                        align-items: flex-start; // Align at top if there are multiple lines of text.
+
+                        &::before {
+                            flex: 0 0 1.5em;
+                            padding: 0.25em 0;
+                            text-align: center;
+                        }
+
+                        &:only-child::before {
+                            content: "·";
+                        }
+
+                        &:not(:only-child)::before {
+                            content: "\e5cc";
+                            font-family: "Material Icons";
+                        }
+
+                        &::marker, &::-webkit-details-marker {
+                            display: none;
+                        }
+
+                        &:hover {
+                            background-color: var(--nav-link-hover-background);
+                        }
+                    }
+
+                    details[open] > summary:not(:only-child)::before {
+                        content: "\e5cf";
+                    }
+
+                    ul {
+                        padding-inline-start: 1em;
+                    }
+                }
+            }
+
+            // Splitter.
+
+            > :last-child {
+                cursor: col-resize;
+                flex: 0 0 6px;
+                margin-inline-end: -3px;
+                margin-inline-start: -3px;
+                z-index: 1;
+
+                &:hover {
+                    background: var(--splitter-background);
+                }
+            }
+
+            + main {
+                margin-left: var(--sidebar-width);
+            }
+        }
+    }
+
+    // Sidebar as header.
+
+    @media (max-width: $min-desktop-width - 0.000001px) {
+        :root {
+            font: var(--text-font-mobile);
+        }
+
+        // Hide splitter and table of contents.
+
+        aside > :last-child, nav > :nth-child(3) {
+            display: none;
+        }
     }
 }
 
 @media print {
+    :root {
+        font: var(--text-font-desktop);
+    }
+
+    article {
+        a:visited {
+            color: var(--text-link-color);
+        }
+    }
+
     aside, header {
         display: none;
     }
