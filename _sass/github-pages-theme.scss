@@ -4,19 +4,21 @@ $min-desktop-width: 640px;
     --block-code-background: rgba(0, 0, 0, 0.05);
     --block-quote-background: rgba(0, 0, 0, 0.05);
     --code-color: #000;
-    --code-font-family: Consolas, "Source Code Pro", monospace;
-    --control-font: 14px/1 "Myriad Pro", "Source Sans 3 VF", "Source Sans 3", "Source Sans Pro", "Segoe UI", sans-serif;
+    --code-font-family: "Cascadia Code", "Consolas", "Source Code Pro", monospace;
+    --control-font: 14px/1 var(--control-font-family);
+    --control-font-family: "Myriad Pro", "Source Sans 3 VF", "Source Sans 3", system-ui, sans-serif;
     --inline-code-background: rgba(0, 0, 0, 0.05);
-    --logo-font: 24px "Myriad Pro", "Source Sans Pro", "Segoe UI", sans-serif;
+    --logo-font: 24px/1 var(--control-font-family);
     --nav-background: #666;
     --nav-link-color: #eee;
     --nav-link-hover-background: #888;
     --nav-text-color: #aaa;
+    --root-background: #222;
     --sidebar-width: 240px;
     --splitter-background: rgba(18, 94, 145, 0.618);
     --text-background: #fff;
     --text-font-desktop: 16px/1.25 var(--text-font-family);
-    --text-font-family: "Minion Pro", "Source Serif Variable", "Source Serif Pro", "Times New Roman", serif;
+    --text-font-family: "Minion Pro", "Source Serif Variable", "Source Serif 4", "Times New Roman", serif;
     --text-font-mobile: 14px/1.5 var(--text-font-family);
     --text-link-color: #187fec;
     --text-link-visited-color: #f281a6;
@@ -135,11 +137,11 @@ body {
 
 @media screen {
     :root {
-        background-color: #222;
+        background: var(--root-background);
     }
 
     article {
-        background-color: var(--text-background);
+        background: var(--text-background);
 
         a {
             &:hover {
@@ -156,14 +158,10 @@ body {
         }
     }
 
-    main {
-        padding: 1em;
-    }
-
     // Navigation.
 
     nav {
-        background-color: var(--nav-background);
+        background: var(--nav-background);
         color: var(--nav-text-color);
         display: flex;
         font: var(--control-font);
@@ -176,7 +174,7 @@ body {
             }
 
             &:hover {
-                background-color: var(--nav-link-hover-background);
+                background: var(--nav-link-hover-background);
             }
         }
 
@@ -269,7 +267,7 @@ body {
                         }
 
                         &:hover {
-                            background-color: var(--nav-link-hover-background);
+                            background: var(--nav-link-hover-background);
                         }
                     }
 
@@ -300,6 +298,10 @@ body {
             + main {
                 margin-left: var(--sidebar-width);
             }
+        }
+
+        main {
+            padding: 1em;
         }
     }
 
