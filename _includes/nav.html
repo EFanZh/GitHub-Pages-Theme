@@ -1,14 +1,12 @@
-            <nav>
-                <a href="{{ "/" | relative_url }}">{{ site.title }}</a>
-                <ul>
+            <a href="{{ "/" | relative_url }}">{{ site.title }}</a>
+            <ul>
 {%- for page in site.pages %}
     {%- if page.dir == "/" and page.title and page.url != "/" %}
-                    <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
+                <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
     {%- endif %}
 {%- endfor %}
-                    <li><a href="{% if site.github.is_project_page %}{{ site.github.repository_url }}{% else %}{{ site.github.owner_url }}{% endif %}">GitHub</a></li>
-                </ul>
+                <li><a href="{% if site.github.is_project_page %}{{ site.github.repository_url }}{% else %}{{ site.github.owner_url }}{% endif %}">GitHub</a></li>
+            </ul>
 {%- if page.layout == "post" %}
-                <ul></ul>
+            <ul></ul>
 {%- endif %}
-            </nav>

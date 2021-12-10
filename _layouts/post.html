@@ -1,11 +1,16 @@
----
-layout: default
----
-
-        <aside>
-{% include nav.html %}            <div></div>
-        </aside>
+<!DOCTYPE html>
+<html lang="en" class="with-sidebar">
+    <head>
+{% include common-meta.html %}        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <script type="module" src="{{ "/assets/scripts/main.mjs" | relative_url }}"></script>
+    </head>
+    <body>
+        <nav>
+{% include nav.html %}        </nav>
+        <div></div>
         <main>
             <article>
 {% if content.size > 1 %}{{ content }}{% endif %}            </article>
         </main>
+    </body>
+</html>

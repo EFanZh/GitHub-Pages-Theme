@@ -1,10 +1,13 @@
----
-layout: default
----
-
-        <header>
-{% include nav.html %}        </header>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+{% include common-meta.html %}    </head>
+    <body>
+        <nav>
+{% include nav.html %}        </nav>
         <main>
             <article>
 {% if content.size > 1 %}{{ content }}{% endif %}            </article>
         </main>
+    </body>
+</html>
