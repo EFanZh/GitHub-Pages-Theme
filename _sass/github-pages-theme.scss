@@ -9,6 +9,7 @@ $min-desktop-width: 640px;
     --control-font-family: "Myriad Pro", "Source Sans 3 VF", "Source Sans 3", system-ui, sans-serif;
     --inline-code-background: rgba(0, 0, 0, 0.05);
     --logo-font: 24px/1 var(--control-font-family);
+    --main-min-width: 480px;
     --nav-background: #666;
     --nav-link-color: #eee;
     --nav-link-hover-background: #888;
@@ -23,7 +24,6 @@ $min-desktop-width: 640px;
     --text-link-color: #187fec;
     --text-link-visited-color: #f281a6;
     --text-max-width: 960px;
-    --text-min-width: 480px;
     --toc-min-height: 240px;
     -webkit-print-color-adjust: exact;
 }
@@ -243,7 +243,6 @@ body {
 
         article {
             margin: 1em auto;
-            min-width: var(--text-min-width);
         }
 
         main {
@@ -259,6 +258,7 @@ body {
 
             main {
                 flex: 1 0;
+                min-width: var(--main-min-width);
             }
 
             nav {
