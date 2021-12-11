@@ -92,7 +92,7 @@ Normal text.
 
 End of quotations.
 
-## Links
+## Links ([link in title](javascript:alert("Hi!");))
 
 - [GitHub](https://github.com/)
 - [Google](https://google.com/)
