@@ -16,12 +16,18 @@ function buildToc(article) {
 
             details.open = true;
 
+            const href = "#" + child.id;
+            const tocAnchor = createElement("a");
+
+            tocAnchor.href = href;
+            tocAnchor.innerText = child.innerText;
+
             const headingAnchor = createElement("a");
 
-            headingAnchor.href = "#" + child.id;
-            headingAnchor.innerText = child.innerText;
+            headingAnchor.href = href;
+            headingAnchor.innerText = "§";
 
-            details.appendChild(createElement("summary")).appendChild(headingAnchor);
+            details.appendChild(createElement("summary")).appendChild(tocAnchor);
             stack[headingLevel] = details;
 
             if (headingLevel === 0) {
@@ -32,12 +38,12 @@ function buildToc(article) {
                 (parent.children[1] || parent.appendChild(createElement("ul"))).appendChild(item);
             }
 
-            headingAnchors.push([child, headingAnchor.cloneNode(true)]);
+            headingAnchors.push([child, headingAnchor]);
         }
     }
 
     for (const [heading, anchor] of headingAnchors) {
-        heading.replaceChildren(anchor);
+        heading.appendChild(anchor);
     }
 
     return result;

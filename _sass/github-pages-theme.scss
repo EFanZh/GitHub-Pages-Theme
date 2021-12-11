@@ -63,6 +63,19 @@ article {
                 color: inherit;
             }
         }
+
+        > a:last-child {
+            display: inline-block;
+            left: 0.25em;
+            position: relative;
+            user-select: none;
+            visibility: hidden;
+            width: 0;
+        }
+
+        &:hover > a:last-child {
+            visibility: visible;
+        }
     }
 
     h1 {
