@@ -24,6 +24,7 @@ function buildToc(article) {
 
             const headingAnchor = createElement("a");
 
+            headingAnchor.classList.add("heading-anchor");
             headingAnchor.href = href;
             headingAnchor.innerText = "§";
 

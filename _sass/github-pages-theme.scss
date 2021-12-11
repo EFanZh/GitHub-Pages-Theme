@@ -54,26 +54,20 @@ article {
         font-family: var(--code-font-family);
     }
 
+    .heading-anchor {
+        display: inline-block;
+        left: 0.25em;
+        position: relative;
+        user-select: none;
+        visibility: hidden;
+        width: 0;
+    }
+
     h1, h2, h3, h4, h5, h6 {
         margin-block: 1em;
         text-align: center;
 
-        a {
-            &:link, &:visited {
-                color: inherit;
-            }
-        }
-
-        > a:last-child {
-            display: inline-block;
-            left: 0.25em;
-            position: relative;
-            user-select: none;
-            visibility: hidden;
-            width: 0;
-        }
-
-        &:hover > a:last-child {
+        &:hover > .heading-anchor {
             visibility: visible;
         }
     }
