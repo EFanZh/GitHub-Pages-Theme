@@ -23,6 +23,7 @@ $min-desktop-width: 640px;
     --text-link-color: #187fec;
     --text-link-visited-color: #f281a6;
     --text-max-width: 960px;
+    --text-min-width: 480px;
     --toc-min-height: 240px;
     -webkit-print-color-adjust: exact;
 }
@@ -134,6 +135,8 @@ body {
     margin: 0;
 }
 
+// Styles that do not apply to `print` media.
+
 @media screen {
     :root {
         background: var(--root-background);
@@ -218,6 +221,8 @@ body {
         }
     }
 
+    // Viewport is wide enough.
+
     @media (min-width: $min-desktop-width) {
         :root {
             font: var(--text-font-desktop);
@@ -225,11 +230,14 @@ body {
 
         article {
             margin: 1em auto;
+            min-width: var(--text-min-width);
         }
 
         main {
             padding: 0 1em;
         }
+
+        // A sidebar is presented.
 
         .with-sidebar {
             body {
@@ -237,7 +245,7 @@ body {
             }
 
             main {
-                flex: 1;
+                flex: 1 0;
             }
 
             nav {
@@ -314,6 +322,8 @@ body {
         }
     }
 }
+
+// Styles that do not apply to `screen` media.
 
 @media print {
     :root {
