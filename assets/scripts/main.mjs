@@ -86,7 +86,6 @@ splitter.addEventListener("pointerdown", function (e0) {
         function upHandler() {
             this.removeEventListener("lostpointercapture", upHandler);
             this.removeEventListener("pointermove", moveHandler);
-            this.releasePointerCapture(pointerId);
         }
 
         this.setPointerCapture(pointerId);
